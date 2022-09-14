@@ -18,17 +18,12 @@ public class CubeMover : MonoBehaviour
         _playerInput.Fire += Fire;
         Spawn?.Invoke(new Vector3(0, 0.25f, -3));
     }
-    private void Move()
+    private void Move(float delta)
     {
         if (_isMove == true) return;
-        Vector2 delta = Input.GetTouch(0).deltaPosition;
-
-        if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
-        {
-            Vector3 position = Cube.transform.position;
-            position.x += 0.2f * delta.x * Time.deltaTime;
-            Cube.transform.position = new Vector3(Mathf.Clamp(position.x, -1, 1), position.y, Cube.transform.position.z);
-        }
+        Vector3 position = Cube.transform.position;
+        position.x += delta * Time.deltaTime;
+        Cube.transform.position = new Vector3(Mathf.Clamp(position.x, -1, 1), position.y, Cube.transform.position.z);
     }
     private void Fire()
     {
