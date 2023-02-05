@@ -18,6 +18,5 @@ Scriptable Objects, etc.);
 Task to think: add a start screen with the “Play” button and 2 flags - RU / EN, by
 clicking on which the language / text field “Play” changes to the language of the flag,
 the value of the text field must be loaded from a JSON text file.
-Result: build in *.APK file, ideally upload the code to your personal Git
 
 https://user-images.githubusercontent.com/87083857/216843036-2991b042-e364-462d-8615-9c870f17ad90.mp4
